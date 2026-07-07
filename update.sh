@@ -1,179 +1,35 @@
 #!/usr/bin/env bash
-
 set -e
-
-echo "Generando Coleccionables España 2026..."
-
-cat > index.html <<'EOF'
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<title>Coleccionables España 2026</title>
-
-<style>
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    max-width:1000px;
-    margin:auto;
-    background:#f4f4f4;
-    color:#222;
-    padding:40px;
-}
-
-h1{
-    color:#003366;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-}
-
-th{
-    background:#003366;
-    color:white;
-    padding:10px;
-}
-
-td{
-    border-bottom:1px solid #ddd;
-    padding:10px;
-}
-
-.estado{
-    font-weight:bold;
-    color:#d97706;
-}
-
-footer{
-    margin-top:40px;
-    font-size:0.9em;
-    color:#666;
-}
-</style>
-
-</head>
-
-<body>
-
+cat > style.css <<'CSS'
+body{font-family:Arial,sans-serif;max-width:1000px;margin:auto;background:#f4f4f4;padding:2rem;color:#222}
+h1{color:#003366}.cards{display:flex;gap:1rem;flex-wrap:wrap}.card{background:#fff;padding:1rem;border-radius:8px;flex:1;min-width:180px}
+table{width:100%;border-collapse:collapse;background:#fff}th{background:#003366;color:#fff;padding:.6rem}td{padding:.5rem;border-bottom:1px solid #ddd}
+footer{margin-top:2rem;color:#666;font-size:.9em}
+CSS
+cat > index.html <<'HTML'
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Coleccionables España 2026</title><link rel="stylesheet" href="style.css"></head><body>
 <h1>📚 Coleccionables España 2026</h1>
-
-<p>
-
-Seguimiento semanal de las próximas colecciones de libros y coleccionables que aparecerán en España.
-
-</p>
-
-<p>
-
-<strong>Última actualización:</strong> 1 de julio de 2026
-
-</p>
-
-<h2>Estado de las editoriales y periódicos</h2>
-
-<table>
-
-<tr>
-<th>Editorial / Medio</th>
-<th>Estado</th>
-<th>Observaciones</th>
-</tr>
-
-<tr>
-<td>RBA Coleccionables</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin colecciones de septiembre anunciadas.</td>
-</tr>
-
-<tr>
-<td>Salvat</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin anuncios oficiales.</td>
-</tr>
-
-<tr>
-<td>Planeta DeAgostini</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin anuncios oficiales.</td>
-</tr>
-
-<tr>
-<td>Altaya</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin anuncios oficiales.</td>
-</tr>
-
-<tr>
-<td>Gredos</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin anuncios oficiales.</td>
-</tr>
-
-<tr>
-<td>El País</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin promociones anunciadas.</td>
-</tr>
-
-<tr>
-<td>ABC</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin promociones anunciadas.</td>
-</tr>
-
-<tr>
-<td>El Mundo</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin promociones anunciadas.</td>
-</tr>
-
-<tr>
-<td>La Razón</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin promociones anunciadas.</td>
-</tr>
-
-<tr>
-<td>La Vanguardia</td>
-<td class="estado">🔵 En seguimiento</td>
-<td>Sin promociones anunciadas.</td>
-</tr>
-
+<p><strong>Versión:</strong> 0.2.0<br><strong>Última revisión:</strong> 7 julio 2026</p>
+<div class="cards">
+<div class="card"><b>Confirmadas</b><br>0</div>
+<div class="card"><b>En seguimiento</b><br>11</div>
+<div class="card"><b>Rumores</b><br>0</div>
+</div>
+<h2>Estado</h2>
+<table><tr><th>Editorial / Medio</th><th>Estado</th><th>Colecciones</th><th>Última revisión</th><th>Observaciones</th></tr>
+<tr><td>RBA</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin anuncios oficiales</td></tr>
+<tr><td>Salvat</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin anuncios oficiales</td></tr>
+<tr><td>Planeta DeAgostini</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin anuncios oficiales de libros</td></tr>
+<tr><td>Altaya</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin anuncios oficiales</td></tr>
+<tr><td>Gredos</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin anuncios oficiales</td></tr>
+<tr><td>El País</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin promociones</td></tr>
+<tr><td>ABC</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin promociones</td></tr>
+<tr><td>El Mundo</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin promociones</td></tr>
+<tr><td>La Razón</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin promociones</td></tr>
+<tr><td>La Vanguardia</td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin promociones</td></tr>
+<tr><td><b>OTROS</b></td><td>🔵 En seguimiento</td><td>0</td><td>07/07/2026</td><td>Sin anuncios detectados</td></tr>
 </table>
-
-<h2>Resumen</h2>
-
-<ul>
-
-<li>✔ Se monitorizan las principales editoriales españolas.</li>
-
-<li>✔ Se monitorizan los diarios nacionales.</li>
-
-<li>✔ De momento no existe ninguna colección de septiembre confirmada oficialmente.</li>
-
-<li>✔ La próxima revisión está prevista para el próximo lunes.</li>
-
-</ul>
-
-<footer>
-
-Coleccionables España 2026 · Actualización automática semanal.
-
-</footer>
-
-</body>
-
-</html>
-EOF
-
-echo
-echo "Página generada correctamente."
-echo
-echo "Sube los cambios con:"
-echo
-echo "git add index.html"
-echo "git commit -m \"Primera página\""
-echo "git push"
+<p>Leyenda: 🔵 En seguimiento · 🟢 Confirmada · 🟡 Pendiente · 🔴 Cancelada</p>
+<footer>Coleccionables España 2026 · v0.2.0</footer></body></html>
+HTML
+echo "Generado index.html y style.css"
